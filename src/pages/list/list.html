@@ -1,23 +1,58 @@
 <ion-header>
   <ion-navbar>
+
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+
+    <ion-buttons right>
+
+      <button ion-button icon-only (click)="searchBarToggle()">
+        <ion-icon name="search">
+        </ion-icon>
+      </button>
+
+      <button ion-button icon-only (click)="goToShoppingChart()">
+        <ion-icon name="basket">
+          <ion-badge id="notifications-badge" color="primary">5</ion-badge>
+        </ion-icon>
+      </button>
+
+    </ion-buttons>
+
+    <ion-title>Shopping List</ion-title>
+
   </ion-navbar>
+
+  <ion-searchbar style="padding:0px" *ngIf="searchBar" (ionInput)="getItems($event)"></ion-searchbar>
+
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+
+
+  <button *ngFor="let item of items" (click)="itemTapped($event, item)">
+    <ion-card>
+      <img src="https://assets.bringmeister.de/media/external/D/395000961/1/1795.jpg?imwidth=990" />
+      <ion-card-content>
+        <ion-card-title>
+          Nine Inch Nails Live
+        </ion-card-title>
+        <p>
+          The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
+        </p>
+
+        <div float-left padding>
+          <h2 ion-text color="primary">500 EGP</h2>
+        </div>
+
+        <button clear float-right ion-button transparent icon-only (click)="searchBarToggle()">
+          <ion-icon name="add">
+          </ion-icon>
+        </button>
+
+      </ion-card-content>
+    </ion-card>
+  </button>
+
 </ion-content>
