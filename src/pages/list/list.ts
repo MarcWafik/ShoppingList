@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ItemPage } from '../item/item';
+import { BasketPage } from '../basket/basket';
 
 /**
  * Generated class for the ItemPage page.
@@ -41,7 +43,7 @@ export class ListPage {
 
   itemTapped(event, item) {
     // That's right, we're pushing to ourselves!
-    this.navCtrl.push(ListPage, {
+    this.navCtrl.push(ItemPage, {
       item: item
     });
   }
@@ -51,6 +53,6 @@ export class ListPage {
   }
 
   goToShoppingChart() {
-
+    this.navCtrl.push(BasketPage);
   }
 }
