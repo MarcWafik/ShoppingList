@@ -6,13 +6,51 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>basket</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Shopping Basket</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list *ngIf="items">
+
+    <ion-item ion-item *ngFor="let item of items">
+      <ion-avatar item-start>
+        <img [src]="item.item.images.list[200]" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.item.name}}</h2>
+        <h3 ion-text color="primary">{{item.item.prices.price}} EGP</h3>
+      </ion-label>
+      <ion-select [(ngModel)]="item.quantity">
+        <ion-option default value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+        <ion-option value="7">7</ion-option>
+        <ion-option value="8">8</ion-option>
+        <ion-option value="9">9</ion-option>
+        <ion-option value="10">10</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-card>
+    <ion-card-content ion-text text-center>
+      <h2>Total</h2>
+      <h1>{{total}}
+        <ion-note>EGP</ion-note>
+      </h1>
+    </ion-card-content>
+  </ion-card>
+
+  <div style="padding: 10px;">
+    <button padding ion-button full>Proceed to checkout</button>
+  </div>
 
 </ion-content>
