@@ -1,0 +1,52 @@
+<ion-view view-title="Basket" cache-view="false">
+  <ion-content>
+
+
+
+    <div class="list">
+
+      <a class="item item-thumbnail-left" ng-repeat="item in items">
+
+        <img src="{{item.item.images.list[200]}}">
+
+
+        <h2>{{item.item.name}}</h2>
+        <h3 ion-text color="primary">{{item.item.prices.price | number :2}} €</h3>
+
+        <label class="item item-input item-select" style="border: none;">
+          <div class="input-label">
+            Quantity
+          </div>
+          <select ng-model="item.quantity" ng-change="update()">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </label>
+
+      </a>
+
+    </div>
+
+    <div class="list card">
+      <div class="item item-body" style="text-align: center">
+        <h2>Total</h2>
+        <h1>{{total}} €</h1>
+      </div>
+    </div>
+
+    <div style="padding: 0 10px;">
+      <button class="button button-block button-positive">
+        Proceed to checkout
+      </button>
+    </div>
+
+  </ion-content>
+</ion-view>

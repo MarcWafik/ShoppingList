@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.marc.shoppinglist" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>ShoppingList</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+<widget id="io.marc.SLio1" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Shopping List</name>
+    <description>A demo ionic 1 app.</description>
+    <author email="marc.wafik@hotmail.com" href="http://ionicframework.com/">Marc Wafik</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
